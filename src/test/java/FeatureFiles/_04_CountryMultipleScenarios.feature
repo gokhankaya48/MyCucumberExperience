@@ -10,7 +10,7 @@ Feature: Country Multi Scenario
   Scenario: Create a Country
     When Create a country
     Then Success message should be displayed
-
+  @Regression
   Scenario: Create a Country 2
     When Create a country name as "GokUlk13" code as "GokUlk13Kod"
     Then Success message should be displayed
