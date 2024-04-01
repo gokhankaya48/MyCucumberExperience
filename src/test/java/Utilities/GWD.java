@@ -11,7 +11,7 @@ import java.util.Locale;
 public class GWD {
 
     private static ThreadLocal<WebDriver> threadDriver=new ThreadLocal<>(); //her bir thread e özel driver
-    private static ThreadLocal<String> threadBrowserName=new ThreadLocal<>(); // o thread e özel browser name
+    public static ThreadLocal<String> threadBrowserName=new ThreadLocal<>(); // o thread e özel browser name
 
     //  threadDriver.get() -> bulunduğu hat taki driverı ver
     //  threadDriver.set(driver) -> bulunduğu hata driver set et
