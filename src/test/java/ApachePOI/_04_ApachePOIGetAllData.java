@@ -25,7 +25,6 @@ public class _04_ApachePOIGetAllData {
         for (int i = 0; i <sheet.getPhysicalNumberOfRows() ; i++) {//zoo.length
             for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {//zoo[i].length
                 System.out.print(sheet.getRow(i).getCell(j)+"\t");
-
             }
             System.out.println();
         }
