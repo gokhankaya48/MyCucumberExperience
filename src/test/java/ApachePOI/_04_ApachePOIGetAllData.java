@@ -3,7 +3,6 @@ package ApachePOI;
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class _04_ApachePOIGetAllData {
@@ -15,9 +14,20 @@ public class _04_ApachePOIGetAllData {
         //zoo.length:kaç satır olduğunu
         int rowCount=sheet.getPhysicalNumberOfRows();// kat tane satır var
         System.out.println("rowCount = "+rowCount);
+        for (int i = 0; i < rowCount; i++) { //kaç satır
+            Row row= sheet.getRow(i);
+            int cellCount=row.getPhysicalNumberOfCells();//bu satırdaki hücre sayısı
+            for (int j = 0; j < cellCount; j++) {
+                System.out.print(row.getCell(j)+"\t");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i <sheet.getPhysicalNumberOfRows() ; i++) {//zoo.length
+            for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++) {//zoo[i].length
+                System.out.print(sheet.getRow(i).getCell(j)+"\t");
 
-        for (int i = 0; i < rowCount; i++) {
-
+            }
+            System.out.println();
         }
     }
 
