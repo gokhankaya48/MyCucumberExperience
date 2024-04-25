@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+
 public class DialogContent extends ParentPage{
     public DialogContent(){
         PageFactory.initElements(GWD.getDriver(),this);
@@ -71,6 +73,10 @@ public class DialogContent extends ParentPage{
     public WebElement student;
     @FindBy(xpath = "//span[text()=' Administrator ']")
     public WebElement administrator;
+    @FindBy(xpath = "//tbody//tr//td[2]")
+    public List<WebElement> nameList;
+    @FindBy(xpath = "//span[text()='States']")
+    public WebElement states;
 
 
     public void deleteItem(String deleteName){
@@ -100,6 +106,7 @@ public class DialogContent extends ParentPage{
             case "userType" : return this.userType;
             case "student" : return this.student;
             case "administrator" : return this.administrator;
+            case "states":return this.states;
         }
 
         return null;
